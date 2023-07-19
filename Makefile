@@ -5,9 +5,15 @@ postgres:
 	docker exec -it postgres15 psql
 
 createdb:
-	docker exec -it postgres15 createdb --username=postgres --owner=postgres ai_pro
+	docker exec -it postgres15 createdb --username=postgres --owner=postgres ai-project
 
 dropdb:
-	docker exec -it postgres15 dropdb ai_pro
+	docker exec -it postgres15 dropdb ai-project
 
-.PHONY: postgresinit postgres createdb dropdb
+migrateup:
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5433/ai-project?sslmode=disable" -verbose up
+
+migratedown:
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5433/ai-project?sslmode=disable" -verbose down
+
+.PHONY: postgresinit postgres createdb dropdb migrateup migratedown
