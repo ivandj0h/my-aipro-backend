@@ -84,7 +84,25 @@ CREATE TABLE "users" (
 there is another migration file with the name `000001_create_users_table.down.sql`  
 it is used to drop the table.  
 ```sql
-DROP TABLE IF EXISTS users;
+    DROP TABLE IF EXISTS users;
 ```  
 
-#### Run Migration
+#### Run Migration  
+To run the migration, you can run the following command:
+```bash
+    migrate -path db/migrations -database "postgresql://postgres:postgres@localhost:5433/ai-project?sslmode=disable" --verbose up
+```  
+it will create a table in the database.
+
+#### Create The Repository
+To create the repository, you can run the following command:
+```bash
+    mkdir -p internal/user/
+    cd internal/user/
+    touch user_repository.go
+```  
+Then you can create the :  
+- Service
+- Handler  
+etc...`You can see the example in this repository.`  
+

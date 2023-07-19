@@ -11,7 +11,7 @@ type Database struct {
 
 // NewDatabase Create a new database connection
 func NewDatabase() (*Database, error) {
-	db, err := sql.Open("postgres", "postgresql://postgres:postgres@localhost:5432/ai_pro?sslmode=disable")
+	db, err := sql.Open("postgres", "postgresql://postgres:postgres@localhost:5432/ai-project?sslmode=disable")
 	if err != nil {
 		return nil, err
 	}
