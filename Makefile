@@ -1,5 +1,5 @@
 postgresinit:
-	docker run --name postgres15 -p 5433:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -d postgres:15-alpine
+	docker run --name postgres15 -p 5435:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -d postgres:15-alpine
 
 postgres:
 	docker exec -it postgres15 psql
@@ -11,9 +11,9 @@ dropdb:
 	docker exec -it postgres15 dropdb ai-project
 
 migrateup:
-	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5433/ai-project?sslmode=disable" -verbose up
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5435/ai-project?sslmode=disable" -verbose up
 
 migratedown:
-	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5433/ai-project?sslmode=disable" -verbose down
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5435/ai-project?sslmode=disable" -verbose down
 
 .PHONY: postgresinit postgres createdb dropdb migrateup migratedown
