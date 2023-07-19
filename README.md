@@ -3,7 +3,8 @@
 `Attention! This project is still in development.`
 
 ## Description
-`AI Project Backend` is a backend for the AI Project. It is a REST API that allows the user to interact with the AI Project database.
+`AI Project Backend` is a backend for the AI Project. The application should allow users to add, edit, view and delete AI projects, and provide visual
+reports of the project's status, progress, and other key performance indicators (KPIs).
 
 ## Installation
 1. Clone the repository
@@ -107,6 +108,9 @@ Then you can create the :
 etc...`You can see the example in this repository.`  
 
 ## Screenshots
+
+#### Workflow Screenshots  
+![Workflow Screenshots](./assets/images/workflow.png)
 
 #### IDE Screenshots  
 ![IDE Screenshots](./assets/images/code.png)  
