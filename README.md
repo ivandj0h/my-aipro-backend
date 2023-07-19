@@ -9,12 +9,14 @@ reports of the project's status, progress, and other key performance indicators 
 ## Installation
 1. Clone the repository
 2. Install the dependencies
-3. Run the server
-4. Enjoy!
+3. Pull the postgres image from docker hub
+4. Run the postgres image ( using Makefile )
+5. Run the server
+6. Enjoy!
 
 ## Usage
 
-### Run Postgres Image
+### Run Postgres Image (PostgresQL 15 - Docker Image)
 You can run the Postgres image with the following command:
 ```makefile
 make postgresinit
