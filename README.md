@@ -64,4 +64,27 @@ for the installation, you can refer to this link: [golang-migrate](https://githu
 in my case, i using `MacOS` so i'm using `brew` to install it:
 ```bash
     brew install golang-migrate
-```
+```  
+
+#### Create Migration
+To create a migration, you can run the following command:
+```bash
+migrate create -ext sql -dir db/migrations -seq create_users_table
+```  
+it will create a file in `db/migrations` folder with the name `000001_create_users_table.up.sql`
+then you can add sql query to create a table in that file.  
+```sql
+CREATE TABLE "users" (
+    "id" bigserial primary key NOT NULL,
+    "username" varchar NOT NULL,
+    "email" varchar NOT NULL,
+    "password" varchar NOT NULL
+);
+```  
+there is another migration file with the name `000001_create_users_table.down.sql`  
+it is used to drop the table.  
+```sql
+DROP TABLE IF EXISTS users;
+```  
+
+#### Run Migration
